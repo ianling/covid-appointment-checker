@@ -35,6 +35,7 @@ def cvs_checker():
     except:
         return False, response.text
 
+    # CVS returns a list of all stores in the state
     locations_with_open_appointments = []
     for location in response_data['responsePayloadData']['data']['OR']:
         if location['status'] != "Fully Booked":
